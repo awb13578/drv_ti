@@ -1,0 +1,28 @@
+# Thư mục build và các file thực thi / object sinh ra
+CPU1_RAM/
+CPU1_FLASH/
+Debug/
+Release/
+
+# File trung gian và file thực thi
+*.obj
+*.d
+*.out
+*.map
+*.hex
+*.bin
+
+# Mã nguồn sinh tự động bởi công cụ SysConfig (SysConfig sẽ tự render lại khi build)
+syscfg/
+
+# Cấu hình cá nhân của IDE CCS / Theia / Eclipse
+.settings/
+.clangd/
+.metadata/
+.theia/
+.vscode/
+
+# File nhật ký và file tạm
+*.log
+*.tmp
+*.bak
