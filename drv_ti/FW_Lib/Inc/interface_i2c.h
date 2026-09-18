@@ -5,8 +5,6 @@
 #include "drv_config.h"
 #include <stdint.h>
 #include <stddef.h>
-#include "device.h"
-#include "board.h"
 
 #define I2C_RX_BUFFER_SIZE 16
 
@@ -48,7 +46,5 @@ typedef struct {
 } i2c_obj_t;
 
 extern const i2c_method_t drv_i2c_method;
-
-extern i2c_obj_t i2c_inst[I2C_ID_MAX];
 
 #endif /* INTERFACE_I2C_H_ */
