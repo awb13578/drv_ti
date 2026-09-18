@@ -73,6 +73,7 @@ void main(void)
     // Initialize device clock and peripherals
     //
     Device_init();
+    SysCtl_disableWatchdog();
     
     //
     // Disable pin locks and enable internal pull-ups.
@@ -115,24 +116,23 @@ void main(void)
 
 
     LCD2004_SetCursor(0, 0);
-    LCD2004_Print("Hello C2000!");
+    // LCD2004_Print("Hello C2000!");
 
-    LCD2004_SetCursor(1, 0);
-    LCD2004_Print("I2C LCD Driver");
+    // LCD2004_SetCursor(1, 0);
+    // LCD2004_Print("I2C LCD Driver");
 
     // LCD12864_SetCursor(0, 0);
     // LCD12864_Print("Hello C2000!");
 
     // LCD12864_SetCursor(1, 0);
     // LCD12864_Print("I2C LCD Driver");
-uint16_t data = 0x00;
-uint16_t data2 = 0x01;
+
+    uint16_t data = 0xAB;
+
 while(1)
 {
-//     status2 = drv_i2c_send_message(0x27, &data);
-//     DEVICE_DELAY_US(500000);
-//     status2 = drv_i2c_send_message(0x27, &data2);
-//     DEVICE_DELAY_US(500000);
+    drv_i2c_send_message(0x27, &data);
+    DEVICE_DELAY_US(100000);
 }
 }
 
