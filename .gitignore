@@ -1,10 +1,12 @@
-# Thư mục build và các file thực thi / object sinh ra
-CPU1_RAM/
-CPU1_FLASH/
+# Thư mục build của C2000 (CPU1 RAM / FLASH / LAUNCHXL)
+CPU1_*/
 Debug/
 Release/
 
-# File trung gian và file thực thi
+# File build tự động và file cấu hình biên dịch trung gian
+*.opt
+*.mk
+makefile
 *.obj
 *.d
 *.out
@@ -12,17 +14,17 @@ Release/
 *.hex
 *.bin
 
-# Mã nguồn sinh tự động bởi công cụ SysConfig (SysConfig sẽ tự render lại khi build)
+# Mã nguồn do SysConfig tự render lại khi build
 syscfg/
 
-# Cấu hình cá nhân của IDE CCS / Theia / Eclipse
+# Cấu hình IDE cá nhân
 .settings/
 .clangd/
 .metadata/
 .theia/
 .vscode/
 
-# File nhật ký và file tạm
+# File tạm và log
 *.log
 *.tmp
 *.bak

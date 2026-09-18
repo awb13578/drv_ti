@@ -9,3 +9,44 @@
  * @v2CliArgs --device "TMS320F280037C" --package "100PZ" --context "system" --product "C2000WARE@26.01.00.00"
  * @versions {"tool":"1.28.0+4696"}
  */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const i2c  = scripting.addModule("/driverlib/i2c.js", {}, false);
+const i2c1 = i2c.addInstance();
+const i2c2 = i2c.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+const default_warning = scripting.addModule("/driverlib/default_warning.js", {}, false);
+scripting.suppress("Add the \'Device Support\' module in order to use Clock Tree tool and generate device support files\\. This suggestion can be ignored if not using the Clock Tree tool\\.", default_warning);
+
+i2c1.duty                   = "I2C_DUTYCYCLE_50";
+i2c1.bitCount               = "I2C_BITCOUNT_8";
+i2c1.bitRate                = 100000;
+i2c1.ownAddress             = 0xA;
+i2c1.useInterrupts          = false;
+i2c1.$name                  = "I2C_ID_A";
+i2c1.targetAddress          = 0x27;
+i2c1.i2c.i2c_sdaPin.$assign = "GPIO19, X1";
+i2c1.i2c.i2c_sclPin.$assign = "GPIO18, X2";
+
+i2c2.$name                  = "I2C_ID_B";
+i2c2.duty                   = "I2C_DUTYCYCLE_50";
+i2c2.bitRate                = 100000;
+i2c2.useInterrupts          = false;
+i2c2.targetAddress          = 0x27;
+i2c2.ownAddress             = 0xB;
+i2c2.bitCount               = "I2C_BITCOUNT_8";
+i2c2.i2c.i2c_sdaPin.$assign = "GPIO34";
+i2c2.i2c.i2c_sclPin.$assign = "GPIO51";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+i2c1.i2c.$suggestSolution = "I2CA";
+i2c2.i2c.$suggestSolution = "I2CB";
