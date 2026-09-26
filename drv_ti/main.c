@@ -73,8 +73,14 @@ void main(void)
     // Initialize device clock and peripherals
     //
     Device_init();
+
+
+    //
+    // Uncomment if needed long delay.
+    //
     SysCtl_disableWatchdog();
     
+
     //
     // Disable pin locks and enable internal pull-ups.
     //
