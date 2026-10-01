@@ -8,7 +8,7 @@
 
 #ifdef ENABLE_I2C
 
-#define TxLen 2
+#define TxLen 1
 
 extern i2c_obj_t i2c_inst[I2C_ID_MAX];
 
