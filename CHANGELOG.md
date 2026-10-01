@@ -3,7 +3,8 @@
 | STT | Ngày thay đổi | Phiên bản Firmware  | Nội dung cập nhật                                                          | Người thực hiện   | Status   |
 |-----|---------------|---------------------|----------------------------------------------------------------------------|-------------------|----------|
 | 1   | 07/07/2026    | v1.0.0              | Khởi tạo dự án và cấu hình cho vi xử lý                                    | Nguyễn Quốc Anh   | Obsolete |
-| 2   | 18/09/2026    | v1.0.1              | Phát triển driver I2C                                                      | Nguyễn Quốc Anh   | Active |
+| 2   | 18/09/2026    | v1.0.1              | Phát triển driver I2C                                                      | Nguyễn Quốc Anh   | Obsolete |
+| 3   | 30/09/2026    | v1.1.0              | Phát triển source code cho middleware cho LCD 2004                         | Nguyễn Quốc Anh   | Active |
 
 
 Phiên bản được đánh theo cấu trúc: MAJOR.MINOR.PATCH
